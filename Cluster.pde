@@ -4,6 +4,7 @@ public class Cluster
 
     public Cluster(int len, int x, int y)
     {
-        // your code here
+        Tendril tendy = new Tendril(len,(double)(Math.random()*(2*PI)),x,y);
+        tendy.show();
     }
 }
