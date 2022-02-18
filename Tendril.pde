@@ -12,10 +12,23 @@ class Tendril
    */
   public Tendril(int len, double theta, int x, int y)
   {
-    //your code here
+    myX = x;
+    myY = y;
+    myAngle = theta;
+    myNumSegments = len;
   }
   public void show()
   {
-    //your code here
+    int startX = myX;
+    int startY = myY;
+    stroke(10);
+    for (int i = 0; i < myNumSegments; i++){
+      myAngle += (double)(Math.random()*(0.2)-0.2);
+      double endX = startX + Math.cos((double)(myAngle*SEG_LENGTH));
+      double endY = startY + Math.sin((double)(myAngle*SEG_LENGTH));
+      line((float)startX,(float)startY,(float)endX,(float)endY);
+      startX = (int)endX;
+      startY = (int)endY;
+    }
   }
 }
